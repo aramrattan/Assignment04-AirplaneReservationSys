@@ -24,6 +24,7 @@ namespace Assignment04_AirplaneReservationSys
                switch (selection)
                 {
                     case "1":
+                       //Assiging seats in First Class (Seats 1-5)
                         while (seatSelection == false && indexFirst < 5)
                         {
                             
@@ -43,6 +44,7 @@ namespace Assignment04_AirplaneReservationSys
                             }
 
                         }
+                        //When seats in first are full will ask if seats in economy are okay
                        if (indexFirst >= 5)
                        {
                            string switchClass;
@@ -54,7 +56,7 @@ namespace Assignment04_AirplaneReservationSys
                                indexEco = 5;
                                while (seatSelection == false && indexEco >= 5 && indexEco < 10)
                                {
-                                   //have to make so that it doesnt go over the 5th seat
+                                   
                                    if (seatAvailability[indexEco] == false)
                                    {
                                        seatAvailability[indexEco] = true;
@@ -62,7 +64,7 @@ namespace Assignment04_AirplaneReservationSys
                                        Console.WriteLine(seatAssigned);
                                        Console.WriteLine("The seat you booked is seat number {0}.", seatAssigned);
                                        seatSelection = true;
-                                       //pk\ij\kj
+                                       //to see if array is changing
                                        DisplayArray(seatAvailability);
 
                                    }
@@ -86,7 +88,7 @@ namespace Assignment04_AirplaneReservationSys
                         indexEco = 5;
                         while (seatSelection == false && indexEco >=5 && indexEco < 10)
                         {
-                            //have to make so that it doesnt go over the 5th seat
+                            //Assigning seats for economy class (seats 6-10)
                             if (seatAvailability[indexEco] == false)
                             {
                                 seatAvailability[indexEco] = true;
@@ -94,7 +96,7 @@ namespace Assignment04_AirplaneReservationSys
                                 Console.WriteLine(seatAssigned);
                                 Console.WriteLine("The seat you booked is seat number {0}.", seatAssigned);
                                 seatSelection = true;
-                                //lllkllklk
+                                //to see if array is changing
                                 DisplayArray(seatAvailability);
                             }
                             else
@@ -102,6 +104,7 @@ namespace Assignment04_AirplaneReservationSys
                                 indexEco++;
                             }
                         }
+                       //When seats in economy are full will ask if seats in First are okay
                         if (indexEco >= 9)
                         {
                             string switchClass;
@@ -113,7 +116,7 @@ namespace Assignment04_AirplaneReservationSys
                                 indexFirst = 0;
                                 while (seatSelection == false && indexFirst < 5)
                                 {
-                                    //have to make so that it doesnt go over the 5th seat
+                                   
                                     if (seatAvailability[indexFirst] == false)
                                     {
                                         seatAvailability[indexFirst] = true;
@@ -121,7 +124,7 @@ namespace Assignment04_AirplaneReservationSys
                                         Console.WriteLine(seatAssigned);
                                         Console.WriteLine("The seat you booked is seat number {0}.", seatAssigned);
                                         seatSelection = true;
-                                        //;;llookkllo
+                                        //to see if array is changing
                                         DisplayArray(seatAvailability);
 
                                     }
@@ -142,7 +145,7 @@ namespace Assignment04_AirplaneReservationSys
                         }
                         break;
                     case "3":
-                        Console.WriteLine();
+                        
                         break;
                
                 }
@@ -161,7 +164,7 @@ namespace Assignment04_AirplaneReservationSys
             Console.ReadKey();
              
         }
-
+        //method to display menu and return user selection
         private static string DisplayMenu()
         {
            
